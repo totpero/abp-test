@@ -1,0 +1,31 @@
+﻿@page
+@using abp.test.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model abp.test.Web.Pages._TestModalModel
+
+@inject IHtmlLocalizer<testResource> L
+@{
+    Layout = null;
+}
+
+<abp-modal>
+    <abp-modal-header title="@L["New"].Value"></abp-modal-header>
+    <abp-modal-body>
+        <form>
+            <abp-form-row>
+                <abp-column size="_6">
+                    <label class="text-dark"><strong>test1</strong></label>
+                    <input id="idInput" name="inputtest1" value="test123"/>
+                </abp-column>
+
+                <abp-column size="_6">
+                    <label class="text-dark"><strong>@L["Test"].Value</strong></label>
+                    <select id="IdSelect2" name="selecttest1" style="width: 100%">
+                    </select>
+                </abp-column>
+            </abp-form-row>
+        </form>
+    </abp-modal-body>
+    <abp-modal-footer buttons="@(AbpModalButtons.Cancel | AbpModalButtons.Save)"></abp-modal-footer>
+</abp-modal>
